@@ -21,7 +21,9 @@ end
 # example_spec.rb
 describe Example do
   describe 'some private methods', :private do
-    expect(subject.foo).to eq 'bar'
+    it 'does not raise an error' do
+      expect{subject.foo}.not_to raise_error(NoMethodError)
+    end
   end
 end
 ```
